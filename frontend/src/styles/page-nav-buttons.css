@@ -1,0 +1,61 @@
+.page-nav-wrapper {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  pointer-events: none; /* Prevent clicks except on buttons */
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: auto;
+  padding: 0 1rem;
+  z-index: 1050; /* atop most content */
+}
+
+.page-nav-btn {
+  pointer-events: auto; /* Enable button clicks */
+  min-width: 120px;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  background: white;
+  color: black;
+  border: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.page-nav-btn:disabled {
+  opacity: 0.5;
+  background: #ccc;
+  color: #999;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.page-nav-btn:not(:disabled):hover {
+  background: #084298;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive for small screens: stack buttons vertically centered */
+@media (max-width: 575.98px) {
+  .page-nav-wrapper {
+    flex-direction: column;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+  }
+
+  .page-nav-btn {
+    width: 100%;
+    min-width: unset;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-nav-btn:last-child {
+    margin-bottom: 0;
+  }
+}

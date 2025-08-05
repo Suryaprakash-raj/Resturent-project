@@ -1,0 +1,117 @@
+/* Navbar base styles */
+.navbar {
+  background-color: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: saturate(180%) blur(10px);
+  z-index: 1100;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* Navbar style when scrolled */
+.navbar-scroll {
+  background-color: rgba(33, 37, 41, 0.95); /* Slightly transparent dark background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar brand (logo) */
+.navbar-brand img {
+  max-height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation links */
+.navbar-nav .nav-link {
+  color: #ddd;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #fff;
+  text-decoration: underline;
+  outline: none;
+}
+
+.navbar-nav .nav-link.active {
+  color: #0d6efd; /* Bootstrap primary blue color */
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Buttons in navbar */
+.btn-outline-light {
+  color: #ddd;
+  border-color: #ddd;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-outline-light:hover,
+.btn-outline-light:focus {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: white;
+  box-shadow: 0 0 8px rgba(13, 110, 253, 0.6);
+  outline: none;
+}
+
+/* Navbar toggler (hamburger) for mobile */
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.navbar-toggler:focus {
+  outline: 2px solid #0d6efd;
+  outline-offset: 2px;
+}
+
+/* Navbar toggler icon (default bootstrap style, optional override) */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30'  xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  transition: background-image 0.3s ease;
+}
+
+/* Close button for mobile menu */
+.btn-close-white {
+  filter: invert(1) brightness(2);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Smooth collapse/expand animation */
+.collapse.navbar-collapse {
+  transition: height 0.35s ease;
+}
+
+/* Responsive collapse menu background */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: rgba(33, 37, 41, 0.97); /* Slight dark overlay for menu */
+    padding: 1rem;
+    border-radius: 0.25rem;
+  }
+}
+
+/* Padding top to body to avoid content hidden under navbar (adjust if navbar height changes) */
+body {
+  padding-top: 70px;
+}
+
+/* Optional smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}

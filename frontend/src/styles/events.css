@@ -1,0 +1,316 @@
+/* events.css - Optimized Version */
+
+/* Base Styles with Performance Optimizations */
+.events-container {
+  padding: 2rem 0;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+  will-change: opacity, transform;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header Section with GPU Acceleration */
+.header-section {
+  text-align: center;
+  margin-bottom: 3rem;
+  transform: translate3d(0, -20px, 0);
+  opacity: 0;
+  animation: slideDown 0.6s ease-out 0.3s forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes slideDown {
+  from { transform: translate3d(0, -20px, 0); opacity: 0; }
+  to { transform: translate3d(0, 0, 0); opacity: 1; }
+}
+
+/* Title with Hardware-Accelerated Gradient */
+.page-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  background: linear-gradient(to right, #3498db, #9b59b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: colorShift 8s infinite alternate;
+  backface-visibility: hidden;
+}
+
+@keyframes colorShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Subtle Subtitle Animation */
+.page-subtitle {
+  color: #7f8c8d;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.6s forwards;
+  will-change: opacity;
+}
+
+/* Filter Buttons with Optimized Transitions */
+.filter-buttons {
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.9s forwards;
+  will-change: opacity;
+}
+
+.filter-buttons .btn {
+  transition: 
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  min-width: 100px;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  backface-visibility: hidden;
+}
+
+.filter-buttons .btn:hover {
+  transform: translate3d(0, -3px, 0);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Event Cards with 3D Perspective */
+.event-cards-row {
+  perspective: 1000px;
+}
+
+.event-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: 
+    transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform-style: preserve-3d;
+  opacity: 0;
+  transform: translate3d(0, 30px, 0) rotateX(10deg);
+  animation: cardEntrance 0.6s ease-out forwards;
+  animation-delay: calc(var(--order) * 0.1s);
+  will-change: transform, opacity, box-shadow;
+  backface-visibility: hidden;
+}
+
+@keyframes cardEntrance {
+  from { opacity: 0; transform: translate3d(0, 30px, 0) rotateX(10deg); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) rotateX(0); }
+}
+
+.event-card:hover {
+  transform: translate3d(0, -10px, 0) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Optimized Image Container */
+.card-image-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  transform: translate3d(0, 0, 30px);
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+  will-change: transform;
+}
+
+.event-card:hover .card-image {
+  transform: scale(1.1);
+}
+
+/* Event Badge with GPU Acceleration */
+.event-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 5px 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: 
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  transform: translate3d(0, -10px, 0);
+  opacity: 0;
+  animation: badgeEntrance 0.5s ease-out 0.8s forwards;
+  will-change: transform, opacity, box-shadow;
+}
+
+@keyframes badgeEntrance {
+  from { transform: translate3d(0, -10px, 0); opacity: 0; }
+  to { transform: translate3d(0, 0, 0); opacity: 1; }
+}
+
+.event-card:hover .event-badge {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Text Content Transitions */
+.card-title {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.event-card:hover .card-title {
+  color: #3498db;
+}
+
+.event-description {
+  color: #7f8c8d;
+  margin-bottom: 1.5rem;
+  min-height: 60px;
+  transition: color 0.3s ease;
+}
+
+.event-card:hover .event-description {
+  color: #5d6d7e;
+}
+
+/* Details Section with Optimized Transforms */
+.event-details {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  transition: 
+    background-color 0.3s ease,
+    transform 0.3s ease;
+  will-change: background-color, transform;
+}
+
+.event-card:hover .event-details {
+  background-color: #e8f4fc;
+  transform: translate3d(0, -5px, 0);
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  color: #34495e;
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+.event-card:hover .detail-item {
+  transform: translate3d(5px, 0, 0);
+}
+
+.detail-item i {
+  margin-right: 10px;
+  color: #e74c3c;
+  width: 20px;
+  text-align: center;
+  transition: 
+    color 0.3s ease,
+    transform 0.3s ease;
+  will-change: color, transform;
+}
+
+.event-card:hover .detail-item i {
+  color: #3498db;
+  transform: scale(1.2);
+}
+
+/* Button with GPU-Accelerated Gradient Animation */
+.event-card .btn-primary {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 
+    transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: none;
+  background: linear-gradient(45deg, #3498db, #9b59b6);
+  background-size: 200% 200%;
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+}
+
+.event-card .btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #9b59b6, #3498db);
+  background-size: 200% 200%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  will-change: opacity, background-position;
+}
+
+.event-card .btn-primary:hover {
+  transform: translate3d(0, -3px, 0);
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
+}
+
+.event-card .btn-primary:hover::before {
+  opacity: 1;
+  animation: gradientShift 3s ease infinite;
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .events-container,
+  .header-section,
+  .page-subtitle,
+  .filter-buttons,
+  .event-card,
+  .event-badge {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header-section {
+    margin-bottom: 2rem;
+  }
+  
+  .filter-buttons .btn {
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  
+  .event-card {
+    margin-bottom: 2rem;
+  }
+  
+  .card-image-container {
+    height: 180px;
+  }
+}
+#fg{
+    padding: 4.5%;
+}

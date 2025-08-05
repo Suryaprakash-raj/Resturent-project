@@ -1,0 +1,284 @@
+/* offer-dropdown.css */
+
+/* Container Styles */
+.offers-dropdown-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Header Styles */
+.offers-dropdown-container h2 {
+  color: #2c3e50;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.offers-dropdown-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, #3498db, #9b59b6);
+}
+
+/* Dropdown Selector Styles */
+.offer-selector .dropdown-toggle {
+  background-color: #fff;
+  color: #2c3e50;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.offer-selector .dropdown-toggle:hover,
+.offer-selector .dropdown-toggle:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+.offer-selector .dropdown-toggle::after {
+  margin-left: 0.5rem;
+}
+
+.offer-selector .dropdown-menu {
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 0.5rem;
+}
+
+.offer-selector .dropdown-item {
+  padding: 0.75rem 1.25rem;
+  color: #2c3e50;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.offer-selector .dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.offer-selector .dropdown-item:hover,
+.offer-selector .dropdown-item:focus {
+  background-color: #f8f9fa;
+  color: #3498db;
+}
+
+.offer-selector .dropdown-item.active {
+  background-color: #3498db;
+  color: white;
+}
+
+/* Offer Card Styles */
+.offer-card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+.offer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  color: #7f8c8d;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Badge Styles */
+.badge {
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+/* Offer Details Styles */
+.offer-details {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  align-items: center;
+}
+
+.detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #34495e;
+}
+
+.detail-value {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.font-monospace {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #f1f1f1;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Button Styles */
+.card-footer {
+  background-color: transparent;
+  border-top: none;
+  padding: 1.5rem;
+  padding-top: 0;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  border: none;
+  padding: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(41, 128, 185, 0.3);
+}
+
+/* Loading and Error States */
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: #95a5a6 !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .offers-dropdown-container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+  
+  .offer-details {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .detail-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .detail-value {
+    margin-top: 0.25rem;
+  }
+}
+.offer-card-img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  background: #f8f9fa;
+}
+.offer-details {
+  margin-bottom: 1rem;
+}
+.detail-item {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+.detail-label {
+  min-width: 100px;
+  font-weight: 500;
+  color: #444;
+}
+.detail-value {
+  font-weight: 600;
+  color: #1565c0;
+}
+/* Customize modal backdrop color and opacity */
+.modal-backdrop.show {
+  background-color: rgba(0, 0, 0, 0.6); /* Example: semi-transparent dark overlay */
+}
+
+/* Optional: change modal content background if needed */
+.modal-content {
+  background-color: #fff; /* Default white, you can change to any color */
+}
+body{
+  background-color: #1a1a2e; /* a dark navy shade */
+
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  color: #f0f0f0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+/* Change modal backdrop overlay color and opacity */
+.modal-backdrop.show {
+  background-color: rgba(0, 0, 0, 0.6); /* Darker semi-transparent overlay */
+}
+
+/* Customize modal content background, border, and shadow */
+.modal-content {
+  background-color: #ffffff;  /* White or any other color */
+  border-radius: 0.5rem;     /* Rounded corners */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+/* You can add hover or transition effects */
+.modal-content:hover {
+  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+}

@@ -1,0 +1,316 @@
+/* Home Page Styles */
+.home-page {
+  overflow-x: hidden;
+}
+
+/* Video Carousel */
+.video-carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 95vh;
+  min-height: 600px;
+}
+
+.video-carousel {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.video-carousel-item {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.video-carousel-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  z-index: 1;
+}
+
+.video-overlay h3 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.video-overlay p {
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.video-overlay .btn {
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 2;
+  transform: translateY(-50%);
+}
+
+.carousel-control {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.carousel-control:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  z-index: 2;
+}
+
+.carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators button.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+/* Sections */
+.philosophy-section,
+.private-dining,
+.testimonials,
+.promo-section,
+.about-us {
+  padding: 5rem 0;
+  position: relative;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* Private Dining */
+.private-dining .card {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: none;
+  overflow: hidden;
+  border-radius: 1rem !important;
+}
+
+.private-dining .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+.private-dining .card-img-top {
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.private-dining .card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+/* Testimonials */
+.testimonials .card {
+  border-radius: 1rem !important;
+  transition: all 0.3s ease;
+}
+
+.testimonials .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Promo Section */
+.promo-section {
+  background: linear-gradient(135deg, #343a40 0%, #212529 100%);
+}
+
+.promo-img-container {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: perspective(1000px) rotateY(-5deg);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.promo-img-container:hover {
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+/* About Us */
+.about-us .img-fluid {
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: all 0.6s ease;
+}
+
+.about-us .img-fluid:hover {
+  transform: scale(1.02);
+}
+
+/* CTA Buttons */
+.btn-shadow {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.btn-shadow:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Section Animations */
+.philosophy-section {
+  animation: fadeIn 0.8s ease-out both;
+}
+
+.private-dining {
+  animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+.testimonials {
+  animation: fadeIn 0.8s ease-out 0.4s both;
+}
+
+.promo-section {
+  animation: fadeIn 0.8s ease-out 0.6s both;
+}
+
+.about-us {
+  animation: fadeIn 0.8s ease-out 0.8s both;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .video-carousel-container {
+    height: 60vh;
+    min-height: 400px;
+  }
+  
+  .video-overlay h3 {
+    font-size: 2rem;
+  }
+  
+  .video-overlay p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-carousel-container {
+    height: 50vh;
+    min-height: 300px;
+  }
+  
+  .carousel-control {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .philosophy-section,
+  .private-dining,
+  .testimonials,
+  .promo-section,
+  .about-us {
+    padding: 3rem 0;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+#gk{
+  color: black;
+}

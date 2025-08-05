@@ -1,0 +1,175 @@
+/* --- Menu Cards --- */
+.menu-card {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 1rem !important;
+  overflow: hidden;
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.menu-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+.menu-card-img-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 1rem 1rem 0 0 !important;
+}
+
+.menu-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: transform;
+}
+
+.menu-card:hover .menu-card-img {
+  transform: scale(1.1);
+}
+
+.popular-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, #FFC107 0%, #FF9800 100%);
+  color: #212529;
+  padding: 0.35rem 1rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.popular-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Promo/Extra Cards --- */
+.card-img-scale {
+  transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  will-change: transform;
+}
+
+.card-img-scale:hover {
+  transform: scale(1.1);
+}
+
+.border-top {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  transition: border-color 0.4s ease;
+}
+
+/* --- Animations --- */
+.animate-fadeIn { 
+  animation: fadeIn 1s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.animate-fadeInUp { 
+  animation: fadeInUp 1s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.animate-slideInLeft { 
+  animation: slideInLeft 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.animate-slideInRight { 
+  animation: slideInRight 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+/* Delayed Animations */
+.animate-delay-1 { animation-delay: 0.2s; }
+.animate-delay-2 { animation-delay: 0.4s; }
+.animate-delay-3 { animation-delay: 0.6s; }
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(10px) scale(0.98);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from { 
+    opacity: 0; 
+    transform: translateX(-50px) skewX(5deg);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0) skewX(0deg);
+  }
+}
+
+@keyframes slideInRight {
+  from { 
+    opacity: 0; 
+    transform: translateX(50px) skewX(-5deg);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0) skewX(0deg);
+  }
+}
+
+/* Hover Effects for Cards */
+.card-hover-effect {
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Smooth Background Transitions */
+.bg-transition {
+  transition: background-color 0.6s ease;
+}
+
+/* Button Hover Effects */
+.btn-smooth {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateZ(0);
+}
+
+.btn-smooth:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* Performance Optimizations */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,185 @@
+/* --- BookTable Modern Professional Styling with Animation & Transitions --- */
+
+/* Page/Flex Center (you can wrap <Container> in a <div className="book-bg"> for page background) */
+.book-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  animation: fadeBg 1.6s ease;
+}
+@keyframes fadeBg {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Booking Container Card */
+.book-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1.5rem 2.5rem;
+  background: rgba(255,255,255,0.98);
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 32px rgba(25, 94, 156, 0.12), 0 1.5px 5px rgba(67, 80, 85, 0.06);
+  position: relative;
+  animation: fadeInRise 1s cubic-bezier(.41,1.42,.47,.97);
+  backdrop-filter: blur(2px);
+}
+
+@keyframes fadeInRise {
+  from { opacity: 0; transform: translateY(34px) scale(0.98);}
+  to   { opacity: 1; transform: translateY(0) scale(1);}
+}
+
+.book-title {
+  color: #292e34;
+  text-align: center;
+  margin-bottom: 1.8rem;
+  font-weight: 700;
+  font-size: 2.2rem;
+  letter-spacing: 0.8px;
+  animation: fadeIn 0.7s cubic-bezier(.41,1.42,.47,.97);
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+
+/* Alerts with Drop Animation */
+.alert {
+  border-radius: 0.65rem;
+  margin-bottom: 1.6rem;
+  animation: alertDrop 0.6s cubic-bezier(.33,1.4,.62,0.91);
+}
+@keyframes alertDrop {
+  0%   { opacity: 0; transform: translateY(-36px); }
+  70%  { transform: translateY(5px);}
+  100% { opacity: 1; transform: translateY(0); }
+}
+.alert-danger {
+  background: #ffe3e5;
+  color: #980014;
+  border: none;
+}
+.alert-success {
+  background: #dcffe2;
+  color: #027944;
+  border: none;
+}
+
+/* Form Controls & Labels */
+.form-group {
+  margin-bottom: 1.25rem;
+  animation: fadeIn 0.65s cubic-bezier(.41,1.42,.47,.97);
+}
+
+.form-label {
+  font-weight: 600;
+  color: #435366;
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: color 0.25s;
+}
+
+.form-control {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 1.2px solid #d8e9f2;
+  background: #fcfdfe;
+  transition: border 0.18s, box-shadow 0.18s, background 0.22s;
+  box-shadow: 0 2px 8px rgba(25,69,109,0.03);
+}
+
+.form-control:focus {
+  border-color: #52abf8;
+  background: #f5faff;
+  box-shadow: 0 0 0 0.16rem rgba(82, 171, 248, 0.12);
+  outline: none;
+}
+
+textarea.form-control {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Date & Time Input */
+input[type="datetime-local"].form-control {
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  letter-spacing: 0.2px;
+}
+
+input[type="number"].form-control::-webkit-outer-spin-button,
+input[type="number"].form-control::-webkit-inner-spin-button {
+  -webkit-appearance: none; margin: 0;
+}
+
+/* Submit Button - Animation & Smooth Lift */
+.btn {
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: background 0.21s, box-shadow 0.21s, transform 0.17s cubic-bezier(.41,.99,.38,1.07);
+  font-size: 1.07rem;
+  box-shadow: 0 2px 8px rgba(13,110,253,0.06);
+  letter-spacing: 0.5px;
+}
+.btn-primary {
+  background: linear-gradient(90deg,#389ef5 0%,#1893ef 100%);
+  border: none;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(46,124,223,0.11);
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background: linear-gradient(90deg,#1b8fde 0%,#156ab7 100%);
+  transform: translateY(-2.5px) scale(1.03);
+  box-shadow: 0 7px 20px rgba(57,81,254,0.12);
+}
+
+.btn-primary:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Spinner Animation (No Flicker) */
+.spinner-border {
+  vertical-align: middle;
+  margin-left: 0.5rem;
+  animation: spinner-border 0.9s linear infinite;
+}
+@keyframes spinner-border {
+  to { transform: rotate(360deg); }
+}
+
+/* Placeholder styling */
+.form-control::placeholder {
+  color: #b7c3ca;
+  opacity: 1;
+  font-weight: 400;
+  letter-spacing: 0.18px;
+}
+
+/* Mobile & Tablet Responsive */
+@media (max-width: 768px) {
+  .book-container {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+  .book-title {
+    font-size: 1.3rem;
+  }
+  .form-control { font-size: 0.96rem; }
+}
+
+@media (max-width: 420px) {
+  .book-container {
+    padding: 0.5rem;
+  }
+}
+
